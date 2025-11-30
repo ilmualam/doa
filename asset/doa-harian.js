@@ -6,7 +6,7 @@
     'use strict';
     
     // Domain Protection
-    const ALLOWED = ['ilmualam.com', 'localhost'];
+    const ALLOWED = ['ilmualam.com','blogger.com','localhost'];
     if (!ALLOWED.some(d => window.location.hostname.includes(d))) {
         document.getElementById('duaToolContainer').innerHTML = 
             '<div style="padding:2rem;background:#fff3cd;border:2px solid #856404;border-radius:8px;text-align:center;">' +
