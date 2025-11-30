@@ -8,7 +8,7 @@
     // Domain Protection
     const ALLOWED = ['ilmualam.com','blogger.com','localhost'];
     if (!ALLOWED.some(d => window.location.hostname.includes(d))) {
-        document.getElementById('duaToolContainer').innerHTML = 
+        document.getElementById('doaHarianContainer').innerHTML = 
             '<div style="padding:2rem;background:#fff3cd;border:2px solid #856404;border-radius:8px;text-align:center;">' +
             '<h3 style="color:#856404;">⚠️ Tool ini hanya untuk www.ilmualam.com</h3></div>';
         return;
@@ -144,7 +144,7 @@
     </div>
 </div>`;
         
-        document.getElementById('duaToolContainer').innerHTML = html;
+        document.getElementById('doaHarianContainer').innerHTML = html;
         document.getElementById('duaSearch').addEventListener('input', e => {
             state.search = e.target.value;
             render();
