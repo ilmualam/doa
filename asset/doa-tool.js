@@ -4,18 +4,6 @@
  */
 (function() {
     'use strict';
-    
-    // Domain check
-    const allowed = ['ilmualam.com', 'localhost', '127.0.0.1'];
-    const domain = window.location.hostname;
-    
-    if (!allowed.some(d => domain.includes(d))) {
-        document.getElementById('duaToolContainer').innerHTML = 
-            '<div style="padding:2rem;background:#fff3cd;text-align:center;border-radius:8px;">' +
-            '<h3 style="color:#856404">⚠️ Tool ini hanya untuk ilmualam.com</h3>' +
-            '<p><a href="https://www.ilmualam.com">Lawati laman rasmi</a></p></div>';
-        return;
-    }
 
     // Database
     const DUAS = [
