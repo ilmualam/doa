@@ -95,7 +95,7 @@
         }
 
         const html = `
-<div class="dua-tool" style="font-family:system-ui,-apple-system,sans-serif;">
+<div class="doa-harian" style="font-family:system-ui,-apple-system,sans-serif;">
     <div style="background:linear-gradient(135deg,#667eea,#764ba2);padding:2rem;border-radius:12px 12px 0 0;color:#fff;">
         <h2 style="margin:0 0 1rem 0;">🤲 Tool Doa Harian Interaktif</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;">
