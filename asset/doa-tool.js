@@ -90,19 +90,19 @@
         const isL = state.progress[d.id];
         
         return `
-<div style="background:white;border:2px solid #e9ecef;border-left:5px solid ${cat.c};border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
+<div style="background:white;border:2px solid #e9ecef;border-left:5px solid ${cat.c};border-radius:12px;padding:0.5rem;margin-bottom:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
     <div style="display:flex;justify-content:space-between;margin-bottom:1rem">
         <div>
             <span style="background:${cat.c};color:white;padding:0.3rem 0.8rem;border-radius:15px;font-size:0.85rem;font-weight:600">${cat.i} ${cat.n}</span>
             <h3 style="margin:0.5rem 0;color:#2d3748;font-size:1.2rem">${d.title}</h3>
         </div>
-        <div style="display:flex;gap:0.5rem">
-            <button onclick="toggleBookmark(${d.id})" style="background:${isB?'#ffd700':'#f8f9fa'};border:none;padding:0.5rem 0.8rem;border-radius:8px;cursor:pointer;font-size:1.3rem">${isB?'⭐':'☆'}</button>
-            <button onclick="markLearned(${d.id})" style="background:${isL?'#10b981':'#f8f9fa'};color:${isL?'white':'#6c757d'};border:none;padding:0.5rem 0.8rem;border-radius:8px;cursor:pointer;font-size:0.9rem;font-weight:600">${isL?'✓':'Tanda'}</button>
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;padding:8px 14px">
+            <button onclick="toggleBookmark(${d.id})" style="background:${isB?'#ffd700':'#ecfdf5'};border:none;padding:0.5rem 0.5rem;border-radius:5px;cursor:pointer;font-size:1.3rem">${isB?'⭐':'☆'}</button>
+            <button onclick="markLearned(${d.id})" style="background:${isL?'#0c3803':'#ecfdf5'};color:${isL?'white':'#0c3803'};border:none;padding:0.5rem 0.5rem;border-radius:5px;cursor:pointer;font-size:0.9rem;font-weight:500">${isL?'✓':'Tanda'}</button>
         </div>
     </div>
     <div style="background:#faf9f7;padding:1.5rem;border-radius:8px;margin-bottom:1rem;text-align:right;direction:rtl">
-        <p style="font-size:1.8rem;line-height:2.5;color:#0c3808;margin:0">${d.ar}</p>
+        <p style="font-family:'Amiri';font-size:2.5rem;line-height:1.5;color:#0c3808;margin:0">${d.ar}</p>
     </div>
     <div style="background:#e8f5e9;padding:1rem;border-radius:8px;margin-bottom:1rem">
         <p style="font-size:1.1rem;font-style:italic;color:#1a5a1a;margin:0"><strong>Rumi:</strong> ${d.rumi}</p>
@@ -119,8 +119,8 @@
         const filtered = getFiltered();
         
         const html = `
-<div style="font-family:system-ui,sans-serif">
-    <div style="background:linear-gradient(135deg,#667eea,#764ba2);padding:2rem;border-radius:12px 12px 0 0;color:white">
+<div style="font-family:'Inter'">
+    <div style="background:linear-gradient(135deg,#249749,#0c3803);padding:2rem;border-radius:12px 12px 0 0;color:white">
         <h2 style="margin:0 0 1rem 0">🤲 Tool Doa Harian</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:1rem">
             <div style="background:rgba(255,255,255,0.2);padding:1rem;border-radius:8px;text-align:center">
@@ -147,11 +147,11 @@
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
             <button onclick="filterDuas('all')" class="fbtn" data-f="all" style="padding:0.5rem 1rem;border:2px solid #249749;background:#249749;color:white;border-radius:20px;cursor:pointer;font-weight:600">Semua</button>
             ${Object.entries(CATS).map(([k,v])=>`<button onclick="filterDuas('${k}')" class="fbtn" data-f="${k}" style="padding:0.5rem 1rem;border:2px solid ${v.c};background:white;color:${v.c};border-radius:20px;cursor:pointer;font-weight:600">${v.i} ${v.n}</button>`).join('')}
-            <button onclick="filterDuas('bookmarks')" class="fbtn" data-f="bookmarks" style="padding:0.5rem 1rem;border:2px solid #ff6b6b;background:white;color:#ff6b6b;border-radius:20px;cursor:pointer;font-weight:600">⭐ Simpan</button>
+            <button onclick="filterDuas('bookmarks')" class="fbtn" data-f="bookmarks" style="padding:0.5rem 1rem;border:2px solid #0c3803;background:#F0FFF4;color:#249749;border-radius:20px;cursor:pointer;font-weight:600">⭐ Save</button>
         </div>
     </div>
     
-    <div style="padding:1.5rem;background:white">
+    <div style="padding:0.5rem;background:white">
         ${filtered.length ? filtered.map(renderCard).join('') : '<p style="text-align:center;padding:3rem;color:#6c757d">Tiada doa dijumpai</p>'}
     </div>
 </div>`;
